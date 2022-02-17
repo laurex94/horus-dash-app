@@ -4,8 +4,10 @@ from dash import html
 from dash.dependencies import Input, Output
 import dash_bootstrap_components as dbc
 
-app = dash.Dash(__name__, external_stylesheets= [dbc.themes.BOOTSTRAP, dbc.icons.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets= [dbc.themes.BOOTSTRAP, dbc.icons.BOOTSTRAP], request_pathname_prefix='/horus_dash/')
 app.config.suppress_callback_exceptions = True
+app.css.config.serve_locally = True
+app.scripts.config.serve_locally = True
 
 server = app.server
 
